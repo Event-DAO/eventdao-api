@@ -1,0 +1,34 @@
+server:
+  port: 8080
+  compression:
+    enabled: true
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  profiles:
+    active: devdb
+  boot:
+    admin:
+      url: http://localhost:8080
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+    time-zone: Europe/Istanbul
+  mvc:
+    servlet:
+      path: /api
+
+
+logging:
+  file:
+    name: /var/eventdao/logs/eventdao.log
+  level:
+    root: INFO
+    org.springframework: ERROR
+    org.hibernate: ERROR
+    org.apache.http: INFO
+
+jasypt:
+  encryptor:
+    password: cCE4zvnTKjTHB&83

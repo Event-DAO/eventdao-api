@@ -1,0 +1,22 @@
+## default connection pool and connection details PostgreSQL
+spring:
+   datasource:
+      url: jdbc:postgresql://localhost:5432/eventdao
+      username: payment
+      password: payment
+      hikari:
+         connectionTimeout: 20000
+         maximumPoolSize: 1
+         schema: eventdao
+
+   #drop n create table again, we can try this for first execute ??
+   jpa:
+      properties:
+         hibernate:
+            ddl-auto: update
+            dialect: org.hibernate.dialect.PostgreSQLDialect
+         jdbc:
+            lob:
+               non_contextual_creation: true
+      hibernate:
+         ddl-auto: update
